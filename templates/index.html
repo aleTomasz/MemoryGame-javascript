@@ -4,9 +4,23 @@
     <title>Memory Game</title>
     <meta charset="UTF-8">
     <!-- http://proger.i-forge.net/The_smallest_transparent_pixel/ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=">
+    <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
-
+<div class="wrapper">
+    <div class="stats-container">
+        <div id="moves-count"></div>
+        <div id="time"></div>
+    </div>
+    <div class="game-container"></div>
+    <button id="stop" class="hide">STOP GAME</button>
+</div>
+<div class="control-container">
+    <p id="result"></p>
+    <button id="start" class="hide">START GAME</button>
+</div>
+<script src="../game.js"></script>
 </body>
 </html>
