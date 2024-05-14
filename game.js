@@ -80,7 +80,7 @@ const matrixGenerator = (cardValues, size = 4) => {
      <div class="card-container" data-card-value="${cardValues[i].name}">
         <div class="card-before">?</div>
         <div class="card-after">
-        <img src="${cardValues[i].image}" class="image"/></div>
+        <img src="${cardValues[i].image}" alt="cards" class="image"/></div>
      </div>
      `;
     }
@@ -106,7 +106,7 @@ const matrixGenerator = (cardValues, size = 4) => {
 
                     secondCard = card;
                     let secondCardValue = card.getAttribute("data-card-value");
-                    if (firstCardValue == secondCardValue) {
+                    if (firstCardValue === secondCardValue) {
 
                         firstCard.classList.add("matched");
                         secondCard.classList.add("matched");
@@ -115,9 +115,9 @@ const matrixGenerator = (cardValues, size = 4) => {
 
                         winCount += 1;
 
-                        if (winCount == Math.floor(cardValues.length / 2)) {
+                        if (winCount === Math.floor(cardValues.length / 2)) {
                             result.innerHTML = `<h2>You Won</h2>
-            <h4>Moves: ${movesCount}</h4>`;
+                        <h4>Moves: ${movesCount}</h4>`;
                             stopGame();
                         }
                     } else {
@@ -125,7 +125,7 @@ const matrixGenerator = (cardValues, size = 4) => {
                         let [tempFirst, tempSecond] = [firstCard, secondCard];
                         firstCard = false;
                         secondCard = false;
-                        let delay = setTimeout(() => {
+                        setTimeout(() => {
                             tempFirst.classList.remove("flipped");
                             tempSecond.classList.remove("flipped");
                         }, 500);
