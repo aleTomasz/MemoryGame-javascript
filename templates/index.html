@@ -1,20 +1,20 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Memory Game</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=">
-    <link rel="stylesheet" href="../style.css"/>
-<script src="{{url_for('static', filename='game.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
 </head>
 <body>
-    <div id="registration">Click <a href="registration_page.html">here</a> to go to the registration page.<h1></h1>
+    <div id="registration">Click <a href="{{ url_for('registration') }}">here</a> to go to the registration page.<h1></h1>
     {% if username %}
         <p>Hello, {{ username }}! You are already logged in.</p>
-        <a href="/logout"> Logout</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
     {% else %}
-        <p>You are not logged in. Please <a href="login_page">login</a> to access game.</p>
+        <p>You are not logged in. Please <a href="{{ url_for('login_page') }}">login</a> to access game.</p>
     {% endif %}
     </div>
     <div class="wrapper">

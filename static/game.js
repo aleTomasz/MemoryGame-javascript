@@ -80,7 +80,8 @@ const matrixGenerator = (cardValues, size = 4) => {
      <div class="card-container" data-card-value="${cardValues[i].name}">
         <div class="card-before">?</div>
         <div class="card-after">
-        <img src="${cardValues[i].image}" alt="cards" class="image"/></div>
+            <img src="${cardValues[i].image}" alt="cards" class="image"/>
+        </div>
      </div>
      `;
     }
