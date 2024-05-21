@@ -24,6 +24,9 @@ def login(cursor):
         password = request.form['password']
         cursor.execute("""SELECT login, password FROM users WHERE login = '{login}' and password = '{password}'""")
 
+@app.route('/login_page')
+def login_page():
+    return render_template('login_page.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

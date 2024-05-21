@@ -9,13 +9,12 @@
 <script src="{{url_for('static', filename='game.js')}}"></script>
 </head>
 <body>
-    <div id="registration">Click <a href="registration_page.html">here</a> to go to the registration page.
-        <h1>Home Page</h1>
+    <div id="registration">Click <a href="registration_page.html">here</a> to go to the registration page.<h1></h1>
     {% if username %}
         <p>Hello, {{ username }}! You are already logged in.</p>
         <a href="/logout"> Logout</a>
     {% else %}
-        <p>You are not logged in. Please <a href="login_page.html">login</a>to access game.</p>
+        <p>You are not logged in. Please <a href="login_page">login</a> to access game.</p>
     {% endif %}
     </div>
     <div class="wrapper">
