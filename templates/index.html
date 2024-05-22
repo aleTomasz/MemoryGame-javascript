@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
-    <script src="{{ url_for('static', filename='game.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='game.js') }}"></script>
 </head>
 <body>
     <div id="registration">Click <a href="{{ url_for('registration') }}">here</a> to go to the registration page.<h1></h1>
@@ -27,7 +27,7 @@
     </div>
     <div class="control-container">
         <p id="result"></p>
-        <button id="start" class="hide">START GAME</button>
+        <button id="start" <!---class="hide"--->START GAME</button>
     </div>
 </body>
 </html>

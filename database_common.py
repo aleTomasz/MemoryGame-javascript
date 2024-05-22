@@ -19,27 +19,6 @@ def get_connection_string():
         raise KeyError('Some necessary environment variable(s) are not defined')
 
 
-# def open_database():
-#     try:
-#         connection_string = get_connection_string()
-#         connection = psycopg.connect(connection_string)
-#         connection.autocommit = True
-#     except psycopg.DatabaseError as exception:
-#         print('Database connection problem')
-#         raise exception
-#     return connection
-#
-#
-# def connection_handler(function):
-#     def wrapper(*args, **kwargs):
-#         with open_database() as connection:
-#             with connection.cursor(row_factory=psycopg.rows.dict_row) as cursor:
-#                 ret_value = function(cursor, *args, **kwargs)
-#
-#         return ret_value
-#
-#     return wrapper
-
 def open_database():
     try:
         connection_string = get_connection_string()
@@ -54,7 +33,8 @@ def open_database():
 def connection_handler(function):
     def wrapper(*args, **kwargs):
         with open_database() as connection:
-            with connection.cursor() as cursor:
+            with connection.cursor(row_factory=psycopg.rows.dict_row) as cursor:
                 ret_value = function(cursor, *args, **kwargs)
         return ret_value
+
     return wrapper
