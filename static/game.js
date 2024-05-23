@@ -12,26 +12,26 @@ let secondCard = false;
 
 
 const items = [
-    {name: "color1", image: "../images/1.png"},
-    {name: "color2", image: "../images/2.png"},
-    {name: "color3", image: "../images/3.png"},
-    {name: "color4", image: "../images/4.png"},
-    {name: "color5", image: "../images/5.png"},
-    {name: "color6", image: "../images/6.png"},
-    {name: "color7", image: "../images/7.png"},
-    {name: "color8", image: "../images/8.png"},
-    {name: "color9", image: "../images/9.png"},
-    {name: "color10", image: "../images/10.png"},
-    {name: "color11", image: "../images/11.png"},
-    {name: "color12", image: "../images/12.png"},
-    {name: "color13", image: "../images/13.png"},
-    {name: "color14", image: "../images/14.png"},
-    {name: "color15", image: "../images/15.png"},
-    {name: "color16", image: "../images/16.png"},
-    {name: "color17", image: "../images/17.png"},
-    {name: "color18", image: "../images/18.png"},
-    {name: "color19", image: "../images/19.png"},
-    {name: "color20", image: "../images/20.png"},
+    {name: "color1", image: "static/images/1.png"},
+    {name: "color2", image: "static/images/2.png"},
+    {name: "color3", image: "static/images/3.png"},
+    {name: "color4", image: "static/images/4.png"},
+    {name: "color5", image: "static/images/5.png"},
+    {name: "color6", image: "static/images/6.png"},
+    {name: "color7", image: "static/images/7.png"},
+    {name: "color8", image: "static/images/8.png"},
+    {name: "color9", image: "static/images/9.png"},
+    {name: "color10", image: "static/images/10.png"},
+    {name: "color11", image: "static/images/11.png"},
+    {name: "color12", image: "static/images/12.png"},
+    {name: "color13", image: "static/images/13.png"},
+    {name: "color14", image: "static/images/14.png"},
+    {name: "color15", image: "static/images/15.png"},
+    {name: "color16", image: "static/images/16.png"},
+    {name: "color17", image: "static/images/17.png"},
+    {name: "color18", image: "static/images/18.png"},
+    {name: "color19", image: "static/images/19.png"},
+    {name: "color20", image: "static/images/20.png"},
 ];
 
 let seconds = 0,
@@ -119,6 +119,7 @@ const matrixGenerator = (cardValues, size = 4) => {
                         if (winCount === Math.floor(cardValues.length / 2)) {
                             result.innerHTML = `<h2>You Won</h2>
                         <h4>Moves: ${movesCount}</h4>`;
+                            sendScore(movesCount);
                             stopGame();
                         }
                     } else {
@@ -168,6 +169,19 @@ const initializer = () => {
     let cardValues = generateRandom();
     console.log(cardValues);
     matrixGenerator(cardValues);
+}
+
+
+function sendScore(score) {
+    fetch('/score', {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            'score': score
+        })
+    });
 }
 
 

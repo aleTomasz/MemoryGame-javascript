@@ -21,3 +21,16 @@ def get_user(cursor, login, user_password):
     if user and bcrypt.checkpw(user_password.encode('utf-8'), user['password'].encode('utf-8')):
         return user
     return None
+
+@database_common.connection_handler
+def set_score(cursor, id, score):
+    cursor.execute(
+        SQL("UPDATE users SET rank = %(score)s WHERE id = %(id)s"),
+        {'score': score, 'id': id})
+
+@database_common.connection_handler
+def ranking(cursor):
+    cursor.execute(
+        SQL("SELECT login, rank FROM users ORDER BY rank ASC LIMIT 10")
+    )
+    return cursor.fetchall()

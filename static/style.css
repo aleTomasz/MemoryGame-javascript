@@ -99,7 +99,6 @@ button {
   box-shadow: 0 0.6em 2em rgba(86, 68, 0, 0.2);
 }
 .hide {
-  display: none;
 }
 #result {
   text-align: center;
