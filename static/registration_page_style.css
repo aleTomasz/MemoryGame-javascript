@@ -1,7 +1,10 @@
-* {box-sizing: border-box}
+* {
+    box-sizing: border-box
+}
 
 .container {
     padding: 16px;
+
 }
 
 input[type=text], input[type=password] {
@@ -10,7 +13,7 @@ input[type=text], input[type=password] {
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
-    background:#f1f1f1;
+    background: #f1f1f1;
 }
 
 input[type=text]:focus, input[type=password]:focus {
@@ -19,26 +22,26 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
 }
 
 .register-btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
 }
 
 a {
-  color: dodgerblue;
+    color: dodgerblue;
 }
 
 .signin {
-  background-color: #f1f1f1;
-  text-align: center;
+    background-color: #f1f1f1;
+    text-align: center;
 }

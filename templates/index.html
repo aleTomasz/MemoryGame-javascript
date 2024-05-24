@@ -4,36 +4,32 @@
     <title>Memory Game</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
     <script defer src="{{ url_for('static', filename='game.js') }}"></script>
 </head>
 <body>
-    <div id="registration">Click <a href="{{ url_for('registration') }}">here</a> to go to the registration page.<h1></h1>
+<div id="registration">Click <a href="{{ url_for('registration') }}">here</a> to go to the registration page.<h1></h1>
     {% if username %}
-        <p>Hello, {{ username }}! You are already logged in.</p>
-        <a href="{{ url_for('logout') }}">Logout</a>
+    <p>Hello, {{ username }}! You are already logged in.</p>
+    <a href="{{ url_for('logout') }}">Logout</a>
     {% else %}
-        <p>You are not logged in. Please <a href="{{ url_for('login_page') }}">login</a> to access game.</p>
+    <p>You are not logged in. Please <a href="{{ url_for('login_page') }}">login</a> to access game.</p>
     {% endif %}
-    </div>
-    <div class="wrapper">
-        <div class="stats-container">
-            <div id="moves-count"></div>
-            <div id="time"></div>
-        </div>
-        <div class="game-container"></div>
-        <p id="result"></p>
-        <button id="stop" class="hide">STOP GAME</button>
-    </div>
-    <div class="control-container">
-        <button id="start">START GAME</button>
-    </div>
-<!--    <div class="control-container">-->
-<!--        <button id="rank"><a href="{{ url_for('ranking') }}"></a>RANK</button>-->
-<!--    </div>-->
     <div class="container">
-            <p>Check out? <a href="{{ url_for('ranking') }}">ranking</a>.</p>
-        </div>
+        <p>Check out? <a href="{{ url_for('ranking') }}">ranking</a>.</p>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="stats-container">
+        <div id="moves-count"></div>
+        <div id="time"></div>
+    </div>
+    <div class="game-container"></div>
+    <p id="result"></p>
+    <button id="stop" class="hide">STOP GAME</button>
+</div>
+<div class="control-container">
+    <button id="start">START GAME</button>
+</div>
 </body>
 </html>
