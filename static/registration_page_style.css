@@ -4,8 +4,13 @@
 
 .container {
     padding: 16px;
-
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
 }
+
+
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -44,4 +49,22 @@ a {
 .signin {
     background-color: #f1f1f1;
     text-align: center;
+}
+
+.ranking {
+    background-color: #e3ba84;
+    text-align: center;
+    font-size: xx-large;
+    padding: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+
+
+.whole_ranking {
+    background-color: #e3ba84;
+
 }
