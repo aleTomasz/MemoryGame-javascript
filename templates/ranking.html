@@ -2,17 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../static/registration_page_style.css"/>
+    <title>Ranking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='registration_page_style.css') }}"/>
 </head>
 <body>
-{%for user in ranking  %}
-    <div><span>{{user['login']}}</span>
-    <span>{{user['rank']}}</span></div>
-{%endfor%}
-<div class="container">
-    <button><a href="{{ url_for('index') }}">BACK</a></button>
+<div class="stats-container">
+    <table class="signin">
+        <thead>
+        <tr>
+            <th>User</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in ranking %}
+        <tr>
+            <td>{{ user['login'] }}</td>
+            <td>{{ user['rank'] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="container">
+        <button><a href="{{ url_for('index') }}">BACK</a></button>
+    </div>
 </div>
 </body>
 </html>
-
