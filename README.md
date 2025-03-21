@@ -33,3 +33,9 @@ All cards use image files located in `static/images/` folder. The game randomly 
 - HTML5
 - CSS3
 - JavaScript
+
+## 📦 How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/aleTomasz/MemoryGame-javascript.git
