@@ -1,6 +1,6 @@
 # 🎮 MemoryGame-javascript
 
-Memory Game built with pure JavaScript, HTML and CSS – no frameworks!
+Memory Game built with pure JavaScript, HTML and CSS
 
 ## 🧠 About the Game
 
