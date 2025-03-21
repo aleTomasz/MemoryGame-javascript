@@ -1,71 +1,35 @@
-# Freestyle JavaScript Game
+# 🎮 MemoryGame-javascript
 
-## Story
+Memory Game built with pure JavaScript, HTML and CSS – no frameworks!
 
-By now you know the basics of Javascript. Put your knowledge to the test,
-and create something awesome, creative, and motivating.
-Your task is to create a game in the browser. What kind of game?
+## 🧠 About the Game
 
-Wait for it...
+This is a classic memory card matching game. The goal is to find all matching pairs of cards with the fewest possible moves and in the shortest amount of time. When all cards are matched, your score (number of moves) is sent to the server.
 
-Any kind :) Your creativity (and your JavaScript knowledge) is the only limit.
+## 🚀 Features
 
-## What are you going to learn?
+- Random card generation each time you play
+- Real-time move and timer tracking
+- Win detection and result display
+- Animated card flip effect
+- Reset and replay options
+- Score submission to backend (`/score` endpoint)
 
-- Finding DOM elements in the document tree.
-- Manipulate the DOM using JavaScript.
-- Handle user interactions with JavaScript event handlers.
-- Use HTML data attributes.
-- Use CSS styling.
+## 🖼️ Card Data
 
-## Tasks
+All cards use image files located in `static/images/` folder. The game randomly selects half of them (e.g. 8 pairs for a 4x4 grid).
 
-1. Figure out as a team what game you want to work on and what features you want to finish.
-    - A game is chosen that the whole team agrees to implement.
-    - The game idea is checked by a mentor to make sure it can be realistically implemented in a sprint
-    - The game may be based on one of the following ideas: memory card game, Snake, Towers of Hanoi, simple platformer, Flappy Bird, Space Invaders, classic board games, turn based games, etc.
-    - There is a backlog of possible features.
-    - A plan is created, based on story estimations of what can be finished by the end of the sprint.
+## 💡 How to Play
 
-2. Create a playable game based on JavaScript DOM manipulation and event handling.
-    - The game is based on handling some kind of event(s) (mouse, keyboard...).
-    - The game mainly relies on DOM manipulation to move elements around on the screen or change their appearance (beside CSS of course).
-    - The code is separated into several JavaScript functions.
+1. Click the **Start** button.
+2. Try to find matching image pairs by flipping two cards at a time.
+3. If the cards match – they stay visible.
+4. If they don’t match – they flip back after 0.5 seconds.
+5. Game ends when all pairs are matched.
+6. Your move count and time are displayed at the end.
 
-3. [OPTIONAL] The game or parts of it can be time-driven. This adds some complexity, as you have to change things around in given time intervals.
-    - Some part of the game changes over time without any interaction (such as a moving enemy or avatar).
+## 🧪 Technologies Used
 
-4. [OPTIONAL] Implement a way to check the highest scores.
-    - The highscore data is stored between games in a database. Scores can be linked to registered users. If the user is not registered, the score can be linked to a name.
-
-## General requirements
-
-None
-
-## Hints
-
-- Have fun, create a game that is motivating for you! :)
-- Figure out what game and the features to implement, based on the following hints.
-    - Have a brainstorming session, throw in game and feature ideas without criticizing each other (any idea is a good idea), and write them down somewhere.
-    - Discuss the collected ideas and decide on a game.
-    - **Talk to a mentor about the idea and whether it can be realistically implemented in a sprint.**
-    - Collect any feature ideas you have and specify them so that every team member knows what the expectations are. (These are the [user stories](https://www.mountaingoatsoftware.com/agile/user-stories) in your backlog.)
-    - Estimate each user story and figure out how many you can finish in this sprint.
-- You can open the `index.html` by starting a small HTTP server. For more information, see the Background materials section.
-- Decide whether to create backend functionality. You can use any previously learned technology, such as Flask.
-- Use git branches as you develop new features.
-- If you search the internet for javascript games, you'll see lots of solutions using [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API). It is a nice technology, but we have not met canvas and the main focus of this project is to practice DOM and event handling, so please **say no to canvas for this project**. Later on feel free to learn about canvas with a pet project game for example.
-
-## Background materials
-
-- <i class="far fa-exclamation"></i> [Javascript – Events](project/curriculum/materials/pages/javascript/javascript-events.md)
-- <i class="far fa-exclamation"></i> [Javascript – DOM manipulation](project/curriculum/materials/pages/javascript/javascript-dom.md)
-- <i class="far fa-exclamation"></i> [Javascript – Extending the DOM](project/curriculum/materials/pages/javascript/javascript-extending-the-dom.md)
-- <i class="far fa-exclamation"></i> [How to start a local HTTP server](project/curriculum/materials/pages/tools/serve-files.md)
-- [Javascript – Debugging](project/curriculum/materials/pages/javascript/javascript-debugging.md)
-- [Javascript – Other features](project/curriculum/materials/pages/javascript/javascript-other-features.md)
-- [Javascript.info tutorial](https://javascript.info/)
-- [MDN HTML Drag&Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [MDN Drag operations documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- <i class="far fa-book-open"></i> [CSS Flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- <i class="far fa-book-open"></i> [CSS Grid guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- HTML5
+- CSS3
+- JavaScript
