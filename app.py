@@ -12,6 +12,7 @@ def index():
     else:
         return render_template('index.html')
 
+
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     if request.method == 'POST':
@@ -19,19 +20,19 @@ def registration():
         password = request.form['psw']
         password_repeat = request.form['psw-repeat']
         if password == password_repeat:
-            #2database_common.add_user(login, password)
+            # 2database_common.add_user(login, password)
             data_menager.add_user(login, password)  # Poprawka: zmiana na data_manager
             return redirect(url_for('login_page'))
         else:
             return render_template('registration_page.html', error="Passwords do not match")
     return render_template('registration_page.html')
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         login = request.form['login']
         password = request.form['psw']
-        # Assuming database_common handles database operations and protects against SQL injection
         user = data_menager.get_user(login, password)
         if user:
             session['username'] = user["login"]
@@ -42,14 +43,17 @@ def login():
             return render_template('login_page.html', error="Invalid login credentials")
     return render_template('login_page.html')
 
+
 @app.route('/login_page')
 def login_page():
     return render_template('login_page.html')
+
 
 @app.route('/logout')
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
+
 
 @app.route('/score', methods=['POST'])
 def score():
@@ -57,6 +61,7 @@ def score():
     id = session['id']
     data_menager.set_score(id, score)
     return make_response()
+
 
 @app.route('/ranking')
 def ranking():
